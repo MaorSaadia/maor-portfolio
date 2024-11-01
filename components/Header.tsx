@@ -1,25 +1,8 @@
 "use client";
 
-import { Link as ScrollLink } from "react-scroll";
+// import { Link as ScrollLink } from "react-scroll";
 import Logo from "./Logo";
-
-const links = [
-  {
-    name: "home",
-  },
-  {
-    name: "about",
-  },
-  {
-    name: "journey",
-  },
-  {
-    name: "work",
-  },
-  {
-    name: "contact",
-  },
-];
+import Nav from "./Nav";
 
 const Header = () => {
   return (
@@ -28,9 +11,15 @@ const Header = () => {
         <div className="flex flex-col lg:flex-row items-center gap-4 lg:justify-between">
           {/* logo */}
           <Logo />
-          {/* nav & socials */}
-          <div>nav</div>
-          <div>socials</div>
+          <div className="flex items-center gap-12">
+            {/* nav & socials */}
+            <Nav
+              containerStyles="hidden xl:flex"
+              listStyles="flex gap-6"
+              linkStyles="text-primary font-primary text-lg tracking-[1.4px] transition-all duration-300 cursor-pointer"
+            />
+            <div>socials</div>
+          </div>
         </div>
       </div>
     </header>
