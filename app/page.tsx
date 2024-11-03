@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 
 import Hero from "@/components/Hero";
+import FixedMenu from "@/components/FixedMenu";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Journey from "@/components/Journey";
@@ -21,8 +22,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Hero />
+      <FixedMenu />
       <Services />
       <About />
       <Journey />
@@ -30,7 +32,7 @@ const Home = () => {
       <Contact />
       {/* temporary div */}
       <div className="h-[3000px]"></div>
-    </div>
+    </>
   );
 };
 
