@@ -53,8 +53,35 @@ const About = () => {
             </div>
           </div>
           {/* text */}
-          <div className="text-center">
-            <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
+          <div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
+            <div>
+              <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
+              <p className="text-lg">FullStack & App Developer</p>
+            </div>
+            <p className="max-w-[680px] mx-auto xl:mx-0 mb-2">I create ...</p>
+            {/* info items */}
+            <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
+              {/* item 1 */}
+              <div className="max-w-max">
+                <div className="uppercase font-bold text-primary">Age</div>
+                <p>26 Years</p>
+              </div>
+              {/* item 2 */}
+              <div className="max-w-max">
+                <div className="uppercase font-bold text-primary">Born in</div>
+                <p>Beer Sheva, Israel</p>
+              </div>
+              {/* item 3 */}
+              <div className="max-w-max">
+                <div className="uppercase font-bold text-primary">Phone</div>
+                <p>054-3446787</p>
+              </div>
+              {/* item 4 */}
+              <div className="max-w-max">
+                <div className="uppercase font-bold text-primary">Email</div>
+                <p>maorsa9@gmail.com</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,34 +91,13 @@ const About = () => {
 
 export default About;
 
-// {/* text */}
-// <div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
-//   <div>
-//     <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
-//     <p className="text-lg">FullStack & App Developer</p>
-//   </div>
-// </div>
-// <p className="max-w-[680px] mx-auto xl:mx-0 mb-2">I create ...</p>
-// {/* info items */}
-// <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
-//   {/* item 1 */}
-//   <div className="max-w-max">
-//     <div className="uppercase font-bold text-primary">Age</div>
-//     <p>26 Years</p>
-//   </div>
-//   {/* item 2 */}
-//   <div className="max-w-max">
-//     <div className="uppercase font-bold text-primary">Born in</div>
-//     <p>Beer Sheva, Israel</p>
-//   </div>
-//   {/* item 3 */}
-//   <div className="max-w-max">
-//     <div className="uppercase font-bold text-primary">Phone</div>
-//     <p>054-3446787</p>
-//   </div>
-//   {/* item 4 */}
-//   <div className="max-w-max">
-//     <div className="uppercase font-bold text-primary">Email</div>
-//     <p>maorsa9@gmail.com</p>
-//   </div>
-// </div>
+{
+  /* text */
+}
+<div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
+  <div>
+    <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
+    <p className="text-lg">FullStack & App Developer</p>
+  </div>
+</div>;
+<p className="max-w-[680px] mx-auto xl:mx-0 mb-2">I create ...</p>;
