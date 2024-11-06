@@ -51,7 +51,11 @@ const Hero = () => {
             />
           </div>
           {/* arrow shape */}
-          <div className="hidden xl:flex absolute top-48 left-[4vw]">
+          <div
+            className="hidden xl:flex absolute top-48 left-[4vw]"
+            data-scroll
+            data-scroll-speed="0.05"
+          >
             <Image
               src="/assets/hero/arrow.svg"
               width={160}
@@ -60,7 +64,11 @@ const Hero = () => {
             />
           </div>
           {/* shape 1 */}
-          <div className="absolute top-[600px] left-[3vw]">
+          <div
+            className="absolute top-[600px] left-[3vw]"
+            data-scroll
+            data-scroll-speed="0.2"
+          >
             <RotatingShape
               content={
                 <Image
@@ -75,7 +83,11 @@ const Hero = () => {
             />
           </div>
           {/* shape 2 */}
-          <div className="absolute top-[240px] xl:left-[30vw]">
+          <div
+            className="absolute top-[240px] xl:left-[30vw]"
+            data-scroll
+            data-scroll-speed="0.1"
+          >
             <RotatingShape
               content={
                 <Image
@@ -90,7 +102,11 @@ const Hero = () => {
             />
           </div>
           {/* shape 3 */}
-          <div className="absolute top-[480px] xl:left-[40vw]">
+          <div
+            className="absolute top-[480px] xl:left-[40vw]"
+            data-scroll
+            data-scroll-speed="0.08"
+          >
             <RotatingShape
               content={
                 <Image
