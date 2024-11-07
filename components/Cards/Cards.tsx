@@ -1,3 +1,5 @@
+"use client";
+
 import { FaCss3Alt, FaHtml5, FaJs, FaReact } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -93,13 +95,52 @@ const Cards = () => {
           <TabsTrigger value="skills">Skills</TabsTrigger>
         </TabsList>
         <TabsContent value="experience" className="w-full">
-          <div>
-            {journey
-              .filter((item) => item.type === "experience")
-              .map((card, index) => {
-                return <Card key={index} {...card} />;
-              })}
-          </div>
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {journey
+                .filter((item) => item.type === "experience")
+                .map((card, index) => {
+                  return <Card key={index} {...card} />;
+                })}
+            </motion.div>
+          </AnimatePresence>
+        </TabsContent>
+        <TabsContent value="education" className="w-full">
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {journey
+                .filter((item) => item.type === "education")
+                .map((card, index) => {
+                  return <Card key={index} {...card} />;
+                })}
+            </motion.div>
+          </AnimatePresence>
+        </TabsContent>
+        <TabsContent value="skills" className="w-full">
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {journey
+                .filter((item) => item.type === "skill")
+                .map((card, index) => {
+                  return <Card key={index} {...card} />;
+                })}
+            </motion.div>
+          </AnimatePresence>
         </TabsContent>
       </Tabs>
     </>

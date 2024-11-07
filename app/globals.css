@@ -47,7 +47,6 @@
     @apply text-accent transition-all duration-200;
   }
   :root {
-
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
 }
