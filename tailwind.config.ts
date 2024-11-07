@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +9,8 @@ const config: Config = {
   ],
   theme: {
     container: {
-      center: true,
+      // @ts-expect-error dont need the type here
+      center: "true",
       padding: "15px",
     },
     screens: {
@@ -17,12 +19,10 @@ const config: Config = {
       lg: "1024px",
       xl: "1200px",
     },
-
     fontFamily: {
       primary: "var(--font-bebas)",
       secondary: "var(--font-inter)",
     },
-
     extend: {
       colors: {
         background: "var(--background)",
@@ -37,8 +37,14 @@ const config: Config = {
       boxShadow: {
         custom: "0px 14px 54px rgba(0,0,0,0.1)",
       },
+      // borderRadius: {
+      // 	lg: 'var(--radius)',
+      // 	md: 'calc(var(--radius) - 2px)',
+      // 	sm: 'calc(var(--radius) - 4px)'
+      // }
     },
   },
-  plugins: [],
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
