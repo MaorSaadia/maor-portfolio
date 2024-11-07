@@ -40,9 +40,9 @@ const Hero = () => {
           {/* image */}
         </div>
         <div className="hidden xl:flex w-[55vw] h-[800px] absolute top-0 right-0 bg-accent">
-          <div className="absolute w-[558px] h-[642px] bottom-0 z-40 left-[6.5vw]">
+          <div className="absolute w-[480px] h-[600px] bottom-0 z-40 left-[10.5vw]">
             <Image
-              src="/assets/hero/dev.png"
+              src="/assets/hero/vscode.png"
               fill
               quality="100"
               priority
@@ -103,7 +103,7 @@ const Hero = () => {
           </div>
           {/* shape 3 */}
           <div
-            className="absolute top-[480px] xl:left-[40vw]"
+            className="absolute top-[480px] xl:left-[42vw]"
             data-scroll
             data-scroll-speed="0.08"
           >
