@@ -1,29 +1,31 @@
 import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import AnimatedText from "../AnimatedText";
+import { motion, AnimatePresence } from "framer-motion";
+import WorkItem from "./WorkItem";
 
 // sample data for projects with various categories
 const data = [
   {
-    href: "",
+    href: "/",
     category: "Fullstack",
     img: "/assets/work/thumb-1.png",
     title: "Project 1",
   },
   {
-    href: "",
+    href: "/",
     category: "Apps",
     img: "/assets/work/thumb-2.png",
     title: "Project 2",
   },
   {
-    href: "",
+    href: "/",
     category: "Fullstack",
     img: "/assets/work/thumb-3.png",
     title: "Project 3",
   },
   {
-    href: "",
+    href: "/",
     category: "Frontend",
     img: "/assets/work/thumb-4.png",
     title: "Project 4",
@@ -84,6 +86,31 @@ const Work = () => {
               })}
             </TabsList>
           </div>
+          {/* render content for the selected tab */}
+          <TabsContent value={tabValue} className="w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
+              <AnimatePresence>
+                {filterWork.slice(0, visibleItems).map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <WorkItem {...item} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+            {/* load more button */}
+            {visibleItems < filterWork.length && (
+              <div className="flex justify-center mt-12">
+                <button onClick={loadMoreItems} className="btn btn-accent">
+                  Load more
+                </button>
+              </div>
+            )}
+          </TabsContent>
         </Tabs>
       </div>
     </section>
