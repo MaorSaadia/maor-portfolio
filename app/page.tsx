@@ -7,7 +7,7 @@ import FixedMenu from "@/components/FixedMenu";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Journey from "@/components/Journey";
-import Work from "@/components/Work";
+import Work from "@/components/Work/Work";
 import Contact from "@/components/Contact";
 
 const Home = () => {
