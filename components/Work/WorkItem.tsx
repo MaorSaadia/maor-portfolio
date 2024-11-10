@@ -1,8 +1,8 @@
 import Link from "next/link";
-
-import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { FiArrowDownRight } from "react-icons/fi";
+
+import { Badge } from "../ui/badge";
 
 interface WorkItemProps {
   href?: string;

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import AnimatedText from "../AnimatedText";
-import { motion, AnimatePresence } from "framer-motion";
 import WorkItem from "./WorkItem";
 
 // sample data for projects with various categories
