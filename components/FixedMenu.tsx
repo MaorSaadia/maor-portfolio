@@ -42,7 +42,7 @@ const FixedMenu = () => {
       {/* menu */}
       <AnimatePresence>
         {showMenu && showMenuButton && (
-          <motion.div className="relative w-full max-w-md md:max-w-none h-[400px] bottom-[28rem] xl:bottom-[21.2rem] px-4 pointer-events-auto">
+          <motion.div className="relative w-full max-w-md md:max-w-none h-[320px] bottom-[25rem] md:bottom-[19rem] xl:bottom-[18rem] px-4 pointer-events-auto">
             <div className="bg-white w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 xl:py-12 px-12 xl:px-32 flex items-center gap-12 rounded-lg">
               <Nav
                 containerStyles="md:border-r border-secondary/20 md:pr-12 w-full md:w-auto text-center md:text-left"
