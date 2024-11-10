@@ -146,7 +146,7 @@ const Contact = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-primary">
-                        Phone number <span className="text-accent">*</span>
+                        Phone Number
                       </FormLabel>
                       <FormControl>
                         <Input

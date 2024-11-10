@@ -16,6 +16,10 @@ const FixedMenu = () => {
     query: "(max-width:640px)",
   });
 
+  const isShortScreen = useMediaQuery({
+    query: "(max-height: 800px)",
+  });
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -40,14 +44,11 @@ const FixedMenu = () => {
 
   return (
     <div className="fixed w-full h-[400px] z-50 flex justify-center pointer-events-none bg-transparent">
-      {/* menu content */}
       <AnimatePresence>
         {showMenu && showMenuButton && (
           <>
-            {/* Mobile Layout */}
             {isMobile ? (
               <>
-                {/* Backdrop */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -56,7 +57,6 @@ const FixedMenu = () => {
                   onClick={closeMenu}
                 />
 
-                {/* Mobile Menu */}
                 <motion.div
                   initial={{ y: "100%" }}
                   animate={{ y: 0 }}
@@ -86,50 +86,106 @@ const FixedMenu = () => {
                 </motion.div>
               </>
             ) : (
-              // Desktop Layout (Original)
-              <motion.div className="relative w-full max-w-md md:max-w-none h-[320px] bottom-[25rem] md:bottom-[19rem] xl:bottom-[18rem] px-4 pointer-events-auto">
-                <div className="bg-white w-full h-full shadow-custom max-w-[1170px] mx-auto py-12 xl:py-12 px-12 xl:px-32 flex items-center gap-12 rounded-lg">
+              <motion.div
+                className={`fixed w-full max-w-md md:max-w-none pointer-events-auto ${
+                  isShortScreen
+                    ? "bottom-0 md:bottom-4"
+                    : "bottom-[10rem] md:bottom-[5.5rem] xl:bottom-[6rem]"
+                }`}
+              >
+                <div
+                  className={`bg-white w-full shadow-custom max-w-[1170px] mx-auto 
+                  ${
+                    isShortScreen
+                      ? "py-6 px-6 xl:px-16"
+                      : "py-12 xl:py-12 px-12 xl:px-32"
+                  }
+                  flex items-center gap-12 rounded-lg`}
+                >
                   <Nav
                     containerStyles="md:border-r border-secondary/20 md:pr-12 w-full md:w-auto text-center md:text-left"
                     listStyles="flex flex-col justify-center gap-4"
-                    linkStyles="font-primary text-4xl cursor-pointer"
+                    linkStyles={`font-primary cursor-pointer ${
+                      isShortScreen ? "text-2xl" : "text-4xl"
+                    }`}
                     spy={true}
                   />
-                  {/* info */}
                   <div className="hidden md:flex mx-auto">
                     <div>
-                      <div className="flex gap-12 mb-12">
+                      <div
+                        className={`flex gap-12 ${
+                          isShortScreen ? "mb-6" : "mb-12"
+                        }`}
+                      >
                         <div className="flex flex-col">
-                          <div className="text-[28px] text-accent mb-2">
+                          <div
+                            className={`${
+                              isShortScreen ? "text-xl" : "text-[28px]"
+                            } text-accent mb-2`}
+                          >
                             <FiMapPin />
                           </div>
-                          <p className="font-semibold text-primary text-lg">
+                          <p
+                            className={`font-semibold text-primary ${
+                              isShortScreen ? "text-base" : "text-lg"
+                            }`}
+                          >
                             Location
                           </p>
-                          <p>Beer Sheva, Israel</p>
+                          <p
+                            className={isShortScreen ? "text-sm" : "text-base"}
+                          >
+                            Beer Sheva, Israel
+                          </p>
                         </div>
                         <div className="flex flex-col">
-                          <div className="text-[28px] text-accent mb-2">
+                          <div
+                            className={`${
+                              isShortScreen ? "text-xl" : "text-[28px]"
+                            } text-accent mb-2`}
+                          >
                             <FiPhoneCall />
                           </div>
-                          <p className="font-semibold text-primary text-lg">
+                          <p
+                            className={`font-semibold text-primary ${
+                              isShortScreen ? "text-base" : "text-lg"
+                            }`}
+                          >
                             Phone
                           </p>
-                          <p>054-3446787</p>
+                          <p
+                            className={isShortScreen ? "text-sm" : "text-base"}
+                          >
+                            054-3446787
+                          </p>
                         </div>
                         <div className="flex flex-col">
-                          <div className="text-[28px] text-accent mb-2">
+                          <div
+                            className={`${
+                              isShortScreen ? "text-xl" : "text-[28px]"
+                            } text-accent mb-2`}
+                          >
                             <FiMail />
                           </div>
-                          <p className="font-semibold text-primary text-lg">
+                          <p
+                            className={`font-semibold text-primary ${
+                              isShortScreen ? "text-base" : "text-lg"
+                            }`}
+                          >
                             Email
                           </p>
-                          <p>maorsa9@gmail.com</p>
+                          <p
+                            className={isShortScreen ? "text-sm" : "text-base"}
+                          >
+                            maorsa9@gmail.com
+                          </p>
                         </div>
                       </div>
                       <Socials
                         containerStyles="flex gap-2"
-                        iconStyles="text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full"
+                        iconStyles={`text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full ${
+                          isShortScreen ? "scale-90" : ""
+                        }`}
                       />
                     </div>
                   </div>
@@ -140,7 +196,6 @@ const FixedMenu = () => {
         )}
       </AnimatePresence>
 
-      {/* Menu button */}
       {isMobile ? (
         <AnimatePresence>
           {!showMenu && (
