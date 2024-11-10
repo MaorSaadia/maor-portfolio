@@ -1,8 +1,9 @@
-import { useForm, ValidationError } from "@formspree/react";
-import { useEffect, useState } from "react";
-import AnimatedText from "./AnimatedText";
-import { FaCheckCircle } from "react-icons/fa";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import { FaCheckCircle } from "react-icons/fa";
+
+import AnimatedText from "./AnimatedText";
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mkgnnoya");
@@ -20,7 +21,7 @@ const Contact = () => {
   const [showIcon, setShowIcon] = useState(false);
 
   // handle input changes
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -36,7 +37,7 @@ const Contact = () => {
         firstname: "",
         lastname: "",
         email: "",
-        phoen: "",
+        phone: "",
         message: "",
       });
 
@@ -51,7 +52,7 @@ const Contact = () => {
   }, [state.succeeded]);
 
   // handle for submission
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     handleSubmit(formData);
   };
