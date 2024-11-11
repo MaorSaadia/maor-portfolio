@@ -10,7 +10,10 @@ import Stats from "./Stats/Stats";
 
 const Hero = () => {
   return (
-    <section className="h-[800px] relative bg-accent/10 xl:bg-white" id="home">
+    <section
+      className="h-[800px] relative bg-accent/10 xl:bg-white dark:bg-black/80"
+      id="home"
+    >
       {/* header */}
       <Header />
       <div className="container mx-auto h-full">

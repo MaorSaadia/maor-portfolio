@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { useMediaQuery } from "react-responsive";
 import { FiMapPin, FiPhoneCall, FiMail, FiX } from "react-icons/fi";
+import { Moon, Sun } from "lucide-react";
 
 import Nav from "./Nav";
 import Socials from "./Socials";
@@ -11,6 +12,7 @@ const FixedMenu = () => {
   const [showMenuButton, setShowMenuButton] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const isMobile = useMediaQuery({
     query: "(max-width:640px)",
@@ -22,6 +24,15 @@ const FixedMenu = () => {
 
   useEffect(() => {
     setIsMounted(true);
+    // Check if the user has a preference saved in localStorage
+    const storedDarkMode = localStorage.getItem("darkMode");
+    if (storedDarkMode === "true") {
+      setIsDarkMode(true);
+      document.body.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.body.classList.remove("dark");
+    }
   }, []);
 
   useEffect(() => {
@@ -40,6 +51,12 @@ const FixedMenu = () => {
 
   const closeMenu = () => {
     setShowMenu(false);
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    localStorage.setItem("darkMode", (!isDarkMode).toString());
+    document.body.classList.toggle("dark");
   };
 
   return (
@@ -78,10 +95,26 @@ const FixedMenu = () => {
                       linkStyles="font-primary text-2xl cursor-pointer"
                       spy={true}
                     />
-                    <Socials
-                      containerStyles="flex justify-center gap-4"
-                      iconStyles="text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full"
-                    />
+                    <div className="flex justify-center gap-4">
+                      <Socials
+                        containerStyles="flex gap-2"
+                        iconStyles="text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full"
+                      />
+                      <button
+                        onClick={toggleDarkMode}
+                        className="flex items-center gap-2"
+                      >
+                        {isDarkMode ? (
+                          <>
+                            <Moon className="w-5 h-5" />
+                          </>
+                        ) : (
+                          <>
+                            <Sun className="w-5 h-5" />
+                          </>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </motion.div>
               </>
@@ -100,7 +133,7 @@ const FixedMenu = () => {
                       ? "py-6 px-6 xl:px-16"
                       : "py-12 xl:py-12 px-12 xl:px-32"
                   }
-                  flex items-center gap-12 rounded-lg`}
+                  flex items-center justify-between rounded-lg`}
                 >
                   <Nav
                     containerStyles="md:border-r border-secondary/20 md:pr-12 w-full md:w-auto text-center md:text-left"
@@ -110,84 +143,106 @@ const FixedMenu = () => {
                     }`}
                     spy={true}
                   />
-                  <div className="hidden md:flex mx-auto">
-                    <div>
-                      <div
-                        className={`flex gap-12 ${
-                          isShortScreen ? "mb-6" : "mb-12"
-                        }`}
-                      >
-                        <div className="flex flex-col">
-                          <div
-                            className={`${
-                              isShortScreen ? "text-xl" : "text-[28px]"
-                            } text-accent mb-2`}
-                          >
-                            <FiMapPin />
+                  <div className="flex items-center gap-12">
+                    <div className="hidden md:flex">
+                      <div>
+                        <div
+                          className={`flex gap-12 ${
+                            isShortScreen ? "mb-6" : "mb-12"
+                          }`}
+                        >
+                          <div className="flex flex-col">
+                            <div
+                              className={`${
+                                isShortScreen ? "text-xl" : "text-[28px]"
+                              } text-accent mb-2`}
+                            >
+                              <FiMapPin />
+                            </div>
+                            <p
+                              className={`font-semibold text-primary ${
+                                isShortScreen ? "text-base" : "text-lg"
+                              }`}
+                            >
+                              Location
+                            </p>
+                            <p
+                              className={
+                                isShortScreen ? "text-sm" : "text-base"
+                              }
+                            >
+                              Beer Sheva, Israel
+                            </p>
                           </div>
-                          <p
-                            className={`font-semibold text-primary ${
-                              isShortScreen ? "text-base" : "text-lg"
-                            }`}
-                          >
-                            Location
-                          </p>
-                          <p
-                            className={isShortScreen ? "text-sm" : "text-base"}
-                          >
-                            Beer Sheva, Israel
-                          </p>
-                        </div>
-                        <div className="flex flex-col">
-                          <div
-                            className={`${
-                              isShortScreen ? "text-xl" : "text-[28px]"
-                            } text-accent mb-2`}
-                          >
-                            <FiPhoneCall />
+                          <div className="flex flex-col">
+                            <div
+                              className={`${
+                                isShortScreen ? "text-xl" : "text-[28px]"
+                              } text-accent mb-2`}
+                            >
+                              <FiPhoneCall />
+                            </div>
+                            <p
+                              className={`font-semibold text-primary ${
+                                isShortScreen ? "text-base" : "text-lg"
+                              }`}
+                            >
+                              Phone
+                            </p>
+                            <p
+                              className={
+                                isShortScreen ? "text-sm" : "text-base"
+                              }
+                            >
+                              054-3446787
+                            </p>
                           </div>
-                          <p
-                            className={`font-semibold text-primary ${
-                              isShortScreen ? "text-base" : "text-lg"
-                            }`}
-                          >
-                            Phone
-                          </p>
-                          <p
-                            className={isShortScreen ? "text-sm" : "text-base"}
-                          >
-                            054-3446787
-                          </p>
-                        </div>
-                        <div className="flex flex-col">
-                          <div
-                            className={`${
-                              isShortScreen ? "text-xl" : "text-[28px]"
-                            } text-accent mb-2`}
-                          >
-                            <FiMail />
+                          <div className="flex flex-col">
+                            <div
+                              className={`${
+                                isShortScreen ? "text-xl" : "text-[28px]"
+                              } text-accent mb-2`}
+                            >
+                              <FiMail />
+                            </div>
+                            <p
+                              className={`font-semibold text-primary ${
+                                isShortScreen ? "text-base" : "text-lg"
+                              }`}
+                            >
+                              Email
+                            </p>
+                            <p
+                              className={
+                                isShortScreen ? "text-sm" : "text-base"
+                              }
+                            >
+                              maorsa9@gmail.com
+                            </p>
                           </div>
-                          <p
-                            className={`font-semibold text-primary ${
-                              isShortScreen ? "text-base" : "text-lg"
-                            }`}
-                          >
-                            Email
-                          </p>
-                          <p
-                            className={isShortScreen ? "text-sm" : "text-base"}
-                          >
-                            maorsa9@gmail.com
-                          </p>
                         </div>
+                        <Socials
+                          containerStyles="flex gap-2"
+                          iconStyles={`text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full ${
+                            isShortScreen ? "scale-90" : ""
+                          }`}
+                        />
                       </div>
-                      <Socials
-                        containerStyles="flex gap-2"
-                        iconStyles={`text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full ${
-                          isShortScreen ? "scale-90" : ""
-                        }`}
-                      />
                     </div>
+                    <button
+                      onClick={toggleDarkMode}
+                      className="flex items-center gap-2"
+                    >
+                      {isDarkMode ? (
+                        <>
+                          <Moon className="w-5 h-5" />
+                        </>
+                      ) : (
+                        <>
+                          <Sun className="w-5 h-5" />
+                        </>
+                      )}
+                    </button>
                   </div>
                 </div>
               </motion.div>

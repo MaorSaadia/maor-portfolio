@@ -1,9 +1,9 @@
 "use client";
 
-// import { Link as ScrollLink } from "react-scroll";
 import Logo from "./Logo";
 import Nav from "./Nav";
 import Socials from "./Socials";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   return (
@@ -23,6 +23,8 @@ const Header = () => {
               containerStyles="flex items-center gap-2"
               iconStyles="text-base w-[32px] h-[32px] bg-primary text-white flex items-center justify-center rounded-full"
             />
+            {/* dark mode toggle */}
+            <DarkModeToggle />
           </div>
         </div>
       </div>

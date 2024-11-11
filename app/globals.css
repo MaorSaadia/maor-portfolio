@@ -50,3 +50,30 @@
     --radius: 0.5rem;
   }
 }
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #f1f1f1;
+}
+
+.dark body {
+  @apply bg-background text-foreground;
+}
+
+.dark .h1,
+.dark .h2,
+.dark .h3,
+.dark .h4,
+.dark .h5,
+.dark .h6 {
+  @apply text-foreground;
+}
+
+.dark .btn-accent {
+  @apply bg-accent hover:bg-accent-hover;
+}
+
+.dark .input,
+.dark .textarea {
+  @apply border-[#475467] focus:border-accent;
+}
