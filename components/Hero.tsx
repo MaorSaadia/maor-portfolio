@@ -11,7 +11,7 @@ import Stats from "./Stats/Stats";
 const Hero = () => {
   return (
     <section
-      className="h-[800px] relative bg-accent/10 xl:bg-white xl:dark:bg-black/20"
+      className="h-[800px] relative bg-accent/5 xl:bg-white xl:dark:bg-accent/5"
       id="home"
     >
       {/* header */}
@@ -22,7 +22,7 @@ const Hero = () => {
             <span className="text-accent">I Build And</span> Design Powerful
             <TypeAnimation
               preRenderFirstString={true}
-              sequence={["Webistes", 2000, "Apps", 2000, "ECommerce", 2000]}
+              sequence={["Webistes", 2000, "Apps", 2000, "E-Commerce", 2000]}
               speed={50}
               repeat={Infinity}
               wrapper="span"

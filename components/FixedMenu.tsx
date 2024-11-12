@@ -15,7 +15,7 @@ const FixedMenu = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const isMobile = useMediaQuery({
-    query: "(max-width:640px)",
+    query: "(max-width:800px)",
   });
 
   const isShortScreen = useMediaQuery({
