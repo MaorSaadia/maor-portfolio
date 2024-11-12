@@ -56,12 +56,24 @@ const About = () => {
           <div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
             <div>
               <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
-              <p className="text-lg dark:text-white/90">
-                FullStack & App Developer
-              </p>
+              <p className="text-lg dark:text-white/90">Web & App Developer</p>
             </div>
             <p className="max-w-[680px] mx-auto xl:mx-0 mb-2 dark:text-white">
-              I create ...
+              As a Software Engineer with a bachelor&apos;s degree in Software
+              Engineering, I specialize in creating sophisticated web
+              applications and mobile solutions. My expertise lies in modern
+              JavaScript frameworks and full-stack development, with a
+              particular focus on the MERN stack (MongoDB, Express.js, React,
+              Node.js), React Native, Next.js, and TypeScript. I craft
+              high-performance digital experiences with an emphasis on:
+              Responsive and intuitive user interfaces Seamless user experiences
+              across platforms Meticulous attention to detail Performance
+              optimization and best practices My current focus is on developing
+              comprehensive E-commerce solutions, I maintain a solution-oriented
+              mindset and embrace continuous learning to stay at the forefront
+              of web development technologies. My commitment to professional
+              growth ensures that I can consistently deliver cutting-edge
+              solutions that meet modern business needs.
             </p>
             {/* info items */}
             <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
