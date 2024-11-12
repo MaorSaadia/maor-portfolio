@@ -229,21 +229,21 @@ const FixedMenu = () => {
                         />
                       </div>
                     </div>
-                    <button
-                      onClick={toggleDarkMode}
-                      className="flex items-center gap-2"
-                    >
-                      {isDarkMode ? (
-                        <>
-                          <Moon className="w-5 h-5" />
-                        </>
-                      ) : (
-                        <>
-                          <Sun className="w-5 h-5" />
-                        </>
-                      )}
-                    </button>
                   </div>
+                  <button
+                    onClick={toggleDarkMode}
+                    className="flex items-center gap-2"
+                  >
+                    {isDarkMode ? (
+                      <>
+                        <Moon className="w-5 h-5" />
+                      </>
+                    ) : (
+                      <>
+                        <Sun className="w-5 h-5" />
+                      </>
+                    )}
+                  </button>
                 </div>
               </motion.div>
             )}

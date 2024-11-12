@@ -11,7 +11,7 @@ import Stats from "./Stats/Stats";
 const Hero = () => {
   return (
     <section
-      className="h-[800px] relative bg-accent/10 xl:bg-white xl:dark:bg-black/80"
+      className="h-[800px] relative bg-accent/10 xl:bg-white xl:dark:bg-black/20"
       id="home"
     >
       {/* header */}
