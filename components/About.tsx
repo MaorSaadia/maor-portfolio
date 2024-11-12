@@ -56,30 +56,44 @@ const About = () => {
           <div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
             <div>
               <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
-              <p className="text-lg">FullStack & App Developer</p>
+              <p className="text-lg dark:text-white/90">
+                FullStack & App Developer
+              </p>
             </div>
-            <p className="max-w-[680px] mx-auto xl:mx-0 mb-2">I create ...</p>
+            <p className="max-w-[680px] mx-auto xl:mx-0 mb-2 dark:text-white">
+              I create ...
+            </p>
             {/* info items */}
             <div className="flex flex-col lg:flex-row gap-8 xl:gap-12 max-w-max mx-auto xl:mx-0 items-center">
               {/* item 1 */}
               <div className="max-w-max">
-                <div className="uppercase font-bold text-primary">Age</div>
-                <p>26 Years</p>
+                <div className="uppercase font-bold text-primary dark:text-white">
+                  Age
+                </div>
+                <p className="dark:text-white/90">26 Years</p>
               </div>
               {/* item 2 */}
               <div className="max-w-max">
-                <div className="uppercase font-bold text-primary">Born in</div>
-                <p>Beer Sheva, Israel</p>
+                <div className="uppercase font-bold text-primary dark:text-white">
+                  Born in
+                </div>
+                <p className="dark:text-white/90">Beer Sheva, Israel</p>
               </div>
               {/* item 3 */}
               <div className="max-w-max">
-                <div className="uppercase font-bold text-primary">Phone</div>
-                <p>054-3446787</p>
+                <div className="uppercase font-bold text-primary dark:text-white">
+                  Phone
+                </div>
+                <p className="dark:text-white/90 dark:text-white">
+                  054-3446787
+                </p>
               </div>
               {/* item 4 */}
               <div className="max-w-max">
-                <div className="uppercase font-bold text-primary">Email</div>
-                <p>maorsa9@gmail.com</p>
+                <div className="uppercase font-bold text-primary dark:text-white">
+                  Email
+                </div>
+                <p className="dark:text-white/90">maorsa9@gmail.com</p>
               </div>
             </div>
           </div>

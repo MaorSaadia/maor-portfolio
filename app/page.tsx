@@ -23,7 +23,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <main className="dark:bg-black/80">
       <Hero />
       <FixedMenu />
       <Services />
@@ -32,7 +32,7 @@ const Home = () => {
       <Work />
       <Contact />
       <Footer />
-    </>
+    </main>
   );
 };
 

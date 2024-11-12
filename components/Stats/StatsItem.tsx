@@ -13,7 +13,7 @@ const StatsItem: React.FC<StatsItemProps> = ({
 }) => {
   return (
     <div className="flex xl:flex-1 flex-col items-center text-center">
-      <div className="font-primary text-primary text-4xl xl:text-5xl leading-none">
+      <div className="font-primary text-primary dark:text-white text-4xl xl:text-5xl leading-none">
         <CountUp end={endCountNum} delay={1} duration={4} />
         <span>{endCountText}</span>
       </div>

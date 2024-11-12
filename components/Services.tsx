@@ -32,7 +32,7 @@ const Services = () => {
             return (
               <li
                 key={index}
-                className="bg-white shadow-custom p-6 max-w-[350px] md:max-w-none rounded-lg"
+                className="bg-white dark:bg-black shadow-custom p-6 max-w-[350px] md:max-w-none rounded-lg"
               >
                 <Image
                   src={service.icon}
@@ -41,10 +41,12 @@ const Services = () => {
                   alt=""
                   className="mb-4"
                 />
-                <h3 className="text-[20px] text-primary font-semibold mb-3">
+                <h3 className="text-[20px] text-primary font-semibold mb-3 dark:text-white">
                   {service.title}
                 </h3>
-                <p className="text-[15px]">{service.description}</p>
+                <p className="text-[15px] dark:text-white/90">
+                  {service.description}
+                </p>
               </li>
             );
           })}

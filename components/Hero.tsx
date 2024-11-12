@@ -11,7 +11,7 @@ import Stats from "./Stats/Stats";
 const Hero = () => {
   return (
     <section
-      className="h-[800px] relative bg-accent/10 xl:bg-white dark:bg-black/80"
+      className="h-[800px] relative bg-accent/10 xl:bg-white xl:dark:bg-black/80"
       id="home"
     >
       {/* header */}
@@ -31,7 +31,7 @@ const Hero = () => {
             />
           </h1>
 
-          <p className="lead max-w-[476px] mb-7">
+          <p className="lead max-w-[476px] mb-7 dark:text-white/90">
             Delivering powerful, custom websites that blend aesthetics with
             perfomance.
           </p>
