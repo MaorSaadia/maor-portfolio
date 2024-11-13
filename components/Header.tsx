@@ -1,11 +1,16 @@
 "use client";
 
+import { useContext } from "react";
+import { Moon, Sun } from "lucide-react";
 import Logo from "./Logo";
 import Nav from "./Nav";
 import Socials from "./Socials";
-import DarkModeToggle from "./DarkModeToggle";
+
+import { DarkModeContext } from "@/contexts/DarkModeContext";
 
 const Header = () => {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   return (
     <header className="w-full absolute py-8 xl:py-[48px] z-30">
       <div className="container mx-auto">
@@ -22,9 +27,23 @@ const Header = () => {
             <Socials
               containerStyles="flex items-center gap-2"
               iconStyles="text-base w-[32px] h-[32px] bg-primary text-white flex items-center justify-center rounded-full"
+              isDarkMode={isDarkMode}
             />
             {/* dark mode toggle */}
-            <DarkModeToggle />
+            <button
+              onClick={toggleDarkMode}
+              className="text-black dark:text-white flex items-center gap-2"
+            >
+              {isDarkMode ? (
+                <>
+                  <Moon className="w-5 h-5" />
+                </>
+              ) : (
+                <>
+                  <Sun className="w-5 h-5" />
+                </>
+              )}
+            </button>
           </div>
         </div>
       </div>

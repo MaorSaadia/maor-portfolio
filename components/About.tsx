@@ -92,14 +92,14 @@ const About = () => {
                 <p className="dark:text-white/90">Beer Sheva, Israel</p>
               </div>
               {/* item 3 */}
-              <div className="max-w-max">
+              {/* <div className="max-w-max">
                 <div className="uppercase font-bold text-primary dark:text-white">
                   Phone
                 </div>
                 <p className="dark:text-white/90 dark:text-white">
                   054-3446787
                 </p>
-              </div>
+              </div> */}
               {/* item 4 */}
               <div className="max-w-max">
                 <div className="uppercase font-bold text-primary dark:text-white">

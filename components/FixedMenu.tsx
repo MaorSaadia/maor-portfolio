@@ -1,18 +1,19 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { useMediaQuery } from "react-responsive";
-import { FiMapPin, FiPhoneCall, FiMail, FiX } from "react-icons/fi";
+import { FiMapPin, FiMail, FiX } from "react-icons/fi";
 import { Moon, Sun } from "lucide-react";
 
+import { DarkModeContext } from "@/contexts/DarkModeContext";
 import Nav from "./Nav";
 import Socials from "./Socials";
 
 const FixedMenu = () => {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   const [showMenuButton, setShowMenuButton] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const isMobile = useMediaQuery({
     query: "(max-width:800px)",
@@ -21,42 +22,20 @@ const FixedMenu = () => {
   const isShortScreen = useMediaQuery({
     query: "(max-height: 800px)",
   });
-
   useEffect(() => {
-    setIsMounted(true);
-    // Check if the user has a preference saved in localStorage
-    const storedDarkMode = localStorage.getItem("darkMode");
-    if (storedDarkMode === "true") {
-      setIsDarkMode(true);
-      document.body.classList.add("dark");
+    if (!isMobile) {
+      const handleScroll = () => {
+        setShowMenuButton(window.scrollY > 150);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
     } else {
-      setIsDarkMode(false);
-      document.body.classList.remove("dark");
+      setShowMenuButton(true);
     }
-  }, []);
-
-  useEffect(() => {
-    if (isMounted) {
-      if (!isMobile) {
-        const handleScroll = () => {
-          setShowMenuButton(window.scrollY > 150);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      } else {
-        setShowMenuButton(true);
-      }
-    }
-  }, [isMobile, isMounted]);
+  }, [isMobile]);
 
   const closeMenu = () => {
     setShowMenu(false);
-  };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem("darkMode", (!isDarkMode).toString());
-    document.body.classList.toggle("dark");
   };
 
   return (
@@ -79,13 +58,16 @@ const FixedMenu = () => {
                   animate={{ y: 0 }}
                   exit={{ y: "100%" }}
                   transition={{ type: "spring", damping: 25 }}
-                  className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-custom pointer-events-auto max-h-[85vh] overflow-y-auto"
+                  className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black rounded-t-2xl shadow-custom pointer-events-auto max-h-[85vh] overflow-y-auto"
                 >
                   <button
                     onClick={closeMenu}
                     className="absolute right-4 top-4 p-2 text-primary"
                   >
-                    <FiX className="text-2xl" />
+                    <FiX
+                      color={isDarkMode ? "white" : "black"}
+                      className="text-2xl"
+                    />
                   </button>
 
                   <div className="p-6 space-y-6">
@@ -98,15 +80,15 @@ const FixedMenu = () => {
                     <div className="flex justify-center gap-4">
                       <Socials
                         containerStyles="flex gap-2"
-                        iconStyles="text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full"
+                        iconStyles={`text-[20px] w-[32px] h-[32px] flex items-center justify-center rounded-full ${
+                          isShortScreen ? "scale-90" : ""
+                        }`}
+                        isDarkMode={isDarkMode}
                       />
-                      <button
-                        onClick={toggleDarkMode}
-                        className="flex items-center gap-2"
-                      >
+                      <button onClick={toggleDarkMode}>
                         {isDarkMode ? (
                           <>
-                            <Moon className="w-5 h-5" />
+                            <Moon color="white" className="w-5 h-5" />
                           </>
                         ) : (
                           <>
@@ -127,7 +109,7 @@ const FixedMenu = () => {
                 }`}
               >
                 <div
-                  className={`bg-white w-full shadow-custom max-w-[1170px] mx-auto 
+                  className={`bg-white dark:bg-black w-full shadow-custom max-w-[1170px] mx-auto 
                   ${
                     isShortScreen
                       ? "py-6 px-6 xl:px-16"
@@ -160,7 +142,7 @@ const FixedMenu = () => {
                               <FiMapPin />
                             </div>
                             <p
-                              className={`font-semibold text-primary ${
+                              className={`font-semibold text-primary dark:text-white ${
                                 isShortScreen ? "text-base" : "text-lg"
                               }`}
                             >
@@ -174,7 +156,7 @@ const FixedMenu = () => {
                               Beer Sheva, Israel
                             </p>
                           </div>
-                          <div className="flex flex-col">
+                          {/* <div className="flex flex-col">
                             <div
                               className={`${
                                 isShortScreen ? "text-xl" : "text-[28px]"
@@ -183,7 +165,7 @@ const FixedMenu = () => {
                               <FiPhoneCall />
                             </div>
                             <p
-                              className={`font-semibold text-primary ${
+                              className={`font-semibold text-primary dark:text-white ${
                                 isShortScreen ? "text-base" : "text-lg"
                               }`}
                             >
@@ -196,7 +178,7 @@ const FixedMenu = () => {
                             >
                               054-3446787
                             </p>
-                          </div>
+                          </div> */}
                           <div className="flex flex-col">
                             <div
                               className={`${
@@ -206,7 +188,7 @@ const FixedMenu = () => {
                               <FiMail />
                             </div>
                             <p
-                              className={`font-semibold text-primary ${
+                              className={`font-semibold text-primary dark:text-white ${
                                 isShortScreen ? "text-base" : "text-lg"
                               }`}
                             >
@@ -223,9 +205,10 @@ const FixedMenu = () => {
                         </div>
                         <Socials
                           containerStyles="flex gap-2"
-                          iconStyles={`text-[20px] w-[32px] h-[32px] text-primary flex items-center justify-center rounded-full ${
+                          iconStyles={`text-[20px] w-[32px] h-[32px] flex items-center justify-center rounded-full ${
                             isShortScreen ? "scale-90" : ""
                           }`}
+                          isDarkMode={isDarkMode}
                         />
                       </div>
                     </div>
@@ -236,11 +219,11 @@ const FixedMenu = () => {
                   >
                     {isDarkMode ? (
                       <>
-                        <Moon className="w-5 h-5" />
+                        <Moon color="white" className="w-5 h-5" />
                       </>
                     ) : (
                       <>
-                        <Sun className="w-5 h-5" />
+                        <Sun color="black" className="w-5 h-5" />
                       </>
                     )}
                   </button>
