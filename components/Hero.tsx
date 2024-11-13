@@ -22,7 +22,7 @@ const Hero = () => {
             <span className="text-accent">I Build And</span> Design Powerful
             <TypeAnimation
               preRenderFirstString={true}
-              sequence={["Webistes", 2000, "Apps", 2000, "E-Commerce", 2000]}
+              sequence={["Webistes", 2000, "Apps", 2000, "ECommerce", 2000]}
               speed={50}
               repeat={Infinity}
               wrapper="span"

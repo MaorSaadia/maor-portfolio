@@ -34,11 +34,11 @@ interface LinkButtonProps {
 const data: Project[] = [
   {
     href: "/",
-    demoUrl: "https://demo-project1.com",
+    demoUrl: "https://maor-saadia-new-portfolio.vercel.app/",
     githubUrl: "https://github.com/username/project1",
-    category: "Fullstack",
-    img: "/assets/work/thumb-1.png",
-    title: "Project 1",
+    category: "Frontend",
+    img: "/assets/work/new-portfolio.png",
+    title: "My New Portfolio",
     description:
       "A comprehensive fullstack application for managing user data and analytics.",
     techStack: [
