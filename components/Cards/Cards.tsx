@@ -8,47 +8,58 @@ import Card from "./Card";
 
 const journey = [
   // experience
-  {
-    type: "experience",
-    company: "company",
-    logoUrl: "/assets/journey/experience/logo-1.svg",
-    position: "position",
-    duration: "duration",
-    description: "description",
-  },
-  {
-    type: "experience",
-    company: "company",
-    logoUrl: "/assets/journey/experience/logo-2.svg",
-    position: "position",
-    duration: "duration",
-    description: "description",
-  },
+  // {
+  //   type: "experience",
+  //   company: "company",
+  //   logoUrl: "/assets/journey/experience/logo-1.svg",
+  //   position: "position",
+  //   duration: "duration",
+  //   description: "description",
+  // },
+  // {
+  //   type: "experience",
+  //   company: "company",
+  //   logoUrl: "/assets/journey/experience/logo-2.svg",
+  //   position: "position",
+  //   duration: "duration",
+  //   description: "description",
+  // },
 
   // education
   {
     type: "education",
-    institution: "SCE",
-    logoUrl: "/assets/journey/education/logo-1.svg",
-    qualification: "qualification",
-    duration: "duration",
+    institution: "SCE - Shamoon College of Engineering",
+    logoUrl: "/assets/journey/education/sce-logo.png",
+    qualification: "B.Sc Software Engineering",
+    duration: "Sep 2020 - Oct 2024",
     description: "description",
   },
   {
     type: "education",
     institution: "Udemy",
-    logoUrl: "/assets/journey/education/logo-2.svg",
-    qualification: "qualification",
-    duration: "duration",
-    description: "description",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "The Complete JavaScript Course",
+    // duration: "duration",
+    description:
+      "This Udemy course covers the essential skills to become a proficient JavaScript developer, teaching both fundamental concepts like variables, functions, and arrays, as well as advanced modern features like ES6, classes, and asynchronous programming.",
   },
   {
     type: "education",
     institution: "Udemy",
-    logoUrl: "/assets/journey/education/logo-2.svg",
-    qualification: "qualification",
-    duration: "duration",
-    description: "description",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "MERN From Scratch | eCommerce Platform",
+    // duration: "duration",
+    description:
+      "This Udemy course covers building an eCommerce platform with React, Redux, Express, and MongoDB, including authentication, shopping cart with payments, admin management, and product reviews",
+  },
+  {
+    type: "education",
+    institution: "Udemy",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "Node.js, Express, MongoDB The Complete Bootcamp",
+    // duration: "duration",
+    description:
+      "This Udemy course comprehensively covers building a full-stack application with Node.js, Express, MongoDB, and Mongoose, including a feature-rich RESTful API, advanced authentication/security, server-side rendering, and more.",
   },
 
   // skills
@@ -57,28 +68,28 @@ const journey = [
     name: "HTML",
     icon: <FaHtml5 />,
     duration: "duration",
-    description: "description",
+    // description: "description",
   },
   {
     type: "skill",
     name: "CSS",
     icon: <FaCss3Alt />,
     duration: "duration",
-    description: "description",
+    // description: "description",
   },
   {
     type: "skill",
     name: "Javascript",
     icon: <FaJs />,
     duration: "duration",
-    description: "description",
+    // description: "description",
   },
   {
     type: "skill",
     name: "React",
     icon: <FaReact />,
     duration: "duration",
-    description: "description",
+    // description: "description",
   },
 ];
 
@@ -90,7 +101,7 @@ const Cards = () => {
         className="w-full flex flex-col items-center"
       >
         <TabsList className="max-w-max mb-[30px] dark:text-white/80">
-          <TabsTrigger value="experience">Experience</TabsTrigger>
+          {/* <TabsTrigger value="experience">Experience</TabsTrigger> */}
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="skills">Skills</TabsTrigger>
         </TabsList>

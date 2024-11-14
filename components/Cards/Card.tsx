@@ -27,9 +27,9 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className="w-full h-[300px] overflow-hidden flex items-center sticky top-12">
-      <div className="w-full h-[270px] border border-accent/80 bg-[#f4ffff] rounded-[8px]">
+      <div className="w-full h-[270px] border border-accent/80 bg-[#f4ffff] dark:bg-[#4b4b4b] rounded-[8px]">
         <div className="flex flex-col h-full">
-          <div className="h-[80px] xl:h-[68px] bg-white flex flex-col xl:flex-row justify-center xl:justify-between items-center px-6 md:px-[84px] rounded-tl-[8px] rounded-tr-[8px]">
+          <div className="h-[80px] xl:h-[68px] bg-white dark:bg-black/70 flex flex-col xl:flex-row justify-center xl:justify-between items-center px-6 md:px-[84px] rounded-tl-[8px] rounded-tr-[8px]">
             <div className="flex gap-2">
               <Image
                 src="/assets/journey/shape.svg"
@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
                 height={16}
                 alt=""
               />
-              <h3 className="text-lg font-semibold text-primary">
+              <h3 className="text-lg font-semibold text-primary dark:text-white/90 text-center mb-0.5">
                 {type === "experience"
                   ? position
                   : type === "education"
@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
                   : duration}
               </h3>
             </div>
-            <p className="text-base">
+            <p className="text-base dark:text-white/90">
               {type !== "experience" && type !== "education" ? null : duration}
             </p>
           </div>
@@ -72,7 +72,9 @@ const Card: React.FC<CardProps> = ({
                     ? name
                     : null}
                 </h3>
-                <p className="text-base max-w-[660px]">{description}</p>
+                <p className="text-base max-w-[660px] dark:text-white/90">
+                  {description}
+                </p>
               </div>
             </div>
           </div>

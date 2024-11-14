@@ -32,7 +32,7 @@ const Services = () => {
             return (
               <li
                 key={index}
-                className="bg-white dark:bg-black shadow-custom p-6 max-w-[350px] md:max-w-none rounded-lg"
+                className="bg-white dark:bg-[#1f1f1f] shadow-custom p-6 max-w-[350px] md:max-w-none rounded-lg"
               >
                 <Image
                   src={service.icon}

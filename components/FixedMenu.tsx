@@ -58,7 +58,7 @@ const FixedMenu = () => {
                   animate={{ y: 0 }}
                   exit={{ y: "100%" }}
                   transition={{ type: "spring", damping: 25 }}
-                  className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black rounded-t-2xl shadow-custom pointer-events-auto max-h-[85vh] overflow-y-auto"
+                  className="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1f1f1f] rounded-t-2xl shadow-custom pointer-events-auto max-h-[85vh] overflow-y-auto"
                 >
                   <button
                     onClick={closeMenu}
@@ -88,11 +88,11 @@ const FixedMenu = () => {
                       <button onClick={toggleDarkMode}>
                         {isDarkMode ? (
                           <>
-                            <Moon color="white" className="w-5 h-5" />
+                            <Sun color="white" className="w-5 h-5" />
                           </>
                         ) : (
                           <>
-                            <Sun className="w-5 h-5" />
+                            <Moon className="w-5 h-5" />
                           </>
                         )}
                       </button>
@@ -102,14 +102,14 @@ const FixedMenu = () => {
               </>
             ) : (
               <motion.div
-                className={`fixed w-full max-w-md md:max-w-none pointer-events-auto ${
+                className={`fixed w-full max-w-md md:max-w-none pointer-events-auto pl-4 pr-4 ${
                   isShortScreen
                     ? "bottom-0 md:bottom-4"
                     : "bottom-[10rem] md:bottom-[5.5rem] xl:bottom-[6rem]"
                 }`}
               >
                 <div
-                  className={`bg-white dark:bg-black w-full shadow-custom max-w-[1170px] mx-auto 
+                  className={`bg-white dark:bg-[#1f1f1f] w-full shadow-custom max-w-[1170px] mx-auto 
                   ${
                     isShortScreen
                       ? "py-6 px-6 xl:px-16"
