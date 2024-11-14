@@ -89,7 +89,7 @@ const Cards = () => {
         defaultValue="experience"
         className="w-full flex flex-col items-center"
       >
-        <TabsList className="max-w-max mb-[30px]">
+        <TabsList className="max-w-max mb-[30px] dark:text-white/80">
           <TabsTrigger value="experience">Experience</TabsTrigger>
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="skills">Skills</TabsTrigger>

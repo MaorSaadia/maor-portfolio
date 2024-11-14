@@ -80,14 +80,20 @@ const data: Project[] = [
     href: "/",
     demoUrl: "https://demo-project1.com",
     githubUrl: "https://github.com/username/project1",
-    category: "Frontend",
-    img: "/assets/work/thumb-4.png",
-    title: "Project 4",
-    description: "A modern, responsive landing page for a marketing campaign.",
+    category: "Apps",
+    img: "/assets/work/finde-rent.png",
+    title: "FindeRent App",
+    description:
+      "FindeRent is a mobile app platform developed as a final project at SCE College. It connects students with landlords to streamline apartment searches near academic institutions. The app integrates the Google Maps API to provide interactive maps and detailed property listings, enhancing the user experience and facilitating informed decisions. Additionally, it features real-time chat functionality using Socket.io, fostering instant communication between users and facilitating prompt responses.",
     techStack: [
-      { name: "HTML", logo: "/assets/icons/html.svg" },
-      { name: "CSS", logo: "/assets/icons/css.svg" },
+      { name: "React Native", logo: "/assets/icons/react.svg" },
       { name: "JavaScript", logo: "/assets/icons/javascript.svg" },
+      { name: "Expo", logo: "/assets/icons/expo.svg" },
+      { name: "NodeJs", logo: "/assets/icons/nodejs.svg" },
+      { name: "Express", logo: "/assets/icons/express.svg" },
+      { name: "MongoDB", logo: "/assets/icons/mongodb.svg" },
+      { name: "CSS", logo: "/assets/icons/css.svg" },
+      { name: "Cloudinary", logo: "/assets/icons/cloudinary.svg" },
     ],
   },
 ];
@@ -147,7 +153,7 @@ const Work = () => {
                 <TabsTrigger
                   value={item.category}
                   key={index}
-                  className="capitalize w-[120px] flex items-center justify-center"
+                  className="capitalize w-[120px] flex items-center justify-center dark:text-white/80"
                   onClick={() => setTabValue(item.category)}
                 >
                   {item.category}
@@ -164,32 +170,32 @@ const Work = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="bg-white dark:bg-[#4b4b4b] rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
                   >
                     <WorkItem {...item} />
                     <div className="mt-4 space-y-4">
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-gray-700 dark:text-gray-100">
                         {item.description}
                       </p>
                       <div className="flex flex-wrap gap-3">
                         {item.techStack.map((tech, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center bg-gray-50 rounded-full px-4 py-2 hover:bg-gray-100 transition-colors duration-300"
+                            className="flex items-center bg-gray-50 rounded-full px-4 py-2 hover:bg-gray-100 transition-colors duration-300 cursor-pointer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
                             <motion.div
                               className="relative"
-                              whileHover={{ rotate: 360 }}
-                              transition={{ duration: 0.5 }}
+                              whileHover={{ scale: 1.4 }}
+                              transition={{ duration: 0.3 }}
                             >
                               <Image
                                 src={tech.logo}
                                 alt={tech.name}
                                 width={38}
                                 height={38}
-                                className="w-5 h-5 mr-2"
+                                className="w-5 h-5 mr-2 cursor-pointer"
                               />
                             </motion.div>
                             <span className="text-sm font-medium text-gray-700">
