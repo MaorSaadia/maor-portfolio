@@ -6,6 +6,7 @@ import { IconType } from "react-icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import AnimatedText from "../AnimatedText";
 import WorkItem from "./WorkItem";
+import TruncatedDescription from "../TruncatedDescription";
 
 // Type definitions
 interface TechStack {
@@ -14,8 +15,8 @@ interface TechStack {
 }
 
 interface Project {
-  href: string;
-  demoUrl?: string;
+  href: string | undefined;
+  demoUrl?: string | undefined;
   githubUrl?: string;
   category: string;
   img: string;
@@ -33,18 +34,19 @@ interface LinkButtonProps {
 
 const data: Project[] = [
   {
-    href: "/",
-    demoUrl: "https://maor-saadia-new-portfolio.vercel.app/",
-    githubUrl: "https://github.com/username/project1",
+    href: "https://vercel.com/maorsaadias-projects/maor-saadia-new-portfolio",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/maor-portfolio.git",
     category: "Frontend",
     img: "/assets/work/new-portfolio.png",
     title: "My New Portfolio",
     description:
       "A comprehensive fullstack application for managing user data and analytics.",
     techStack: [
-      { name: "React", logo: "/assets/icons/react.svg" },
-      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
-      { name: "Node.js", logo: "/assets/icons/nodejs.svg" },
+      { name: "NextJs", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "TailwindCss", logo: "/assets/icons/tailwind.svg" },
+      { name: "Framer Motion", logo: "/assets/icons/framer-motion.svg" },
     ],
   },
   {
@@ -77,9 +79,9 @@ const data: Project[] = [
     ],
   },
   {
-    href: "/",
-    demoUrl: "https://demo-project1.com",
-    githubUrl: "https://github.com/username/project1",
+    href: undefined,
+    demoUrl: "https://www.youtube.com/watch?v=qAoGZq1lOSU&ab_channel=FindeRent",
+    githubUrl: "https://github.com/FinderRent/FinderRent.git",
     category: "Apps",
     img: "/assets/work/finde-rent.png",
     title: "FindeRent App",
@@ -174,9 +176,8 @@ const Work = () => {
                   >
                     <WorkItem {...item} />
                     <div className="mt-4 space-y-4">
-                      <p className="text-sm text-gray-700 dark:text-gray-100">
-                        {item.description}
-                      </p>
+                      <TruncatedDescription text={item.description} />
+
                       <div className="flex flex-wrap gap-3">
                         {item.techStack.map((tech, idx) => (
                           <motion.div

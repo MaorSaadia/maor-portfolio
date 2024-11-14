@@ -31,9 +31,11 @@ const WorkItem: React.FC<WorkItemProps> = ({ href, category, img, title }) => {
         <div className="flex-1">
           <h3 className="h3 dark:text-white">{title}</h3>
         </div>
-        <button className="bg-accent text-white rounded-full w-[48px] h-[48px] flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-all duration-500">
-          <FiArrowDownRight className="text-2xl" />
-        </button>
+        {href && (
+          <button className="bg-accent text-white rounded-full w-[48px] h-[48px] flex items-center justify-center -rotate-45 group-hover:rotate-0 transition-all duration-500">
+            <FiArrowDownRight className="text-2xl" />
+          </button>
+        )}
       </div>
     </Link>
   );
