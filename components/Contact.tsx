@@ -83,7 +83,7 @@ const Contact = () => {
                     name="firstname"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel className="text-primary">
+                        <FormLabel className="text-primary dark:text-white/90">
                           First Name <span className="text-accent">*</span>
                         </FormLabel>
                         <FormControl>
@@ -102,7 +102,7 @@ const Contact = () => {
                     name="lastname"
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel className="text-primary">
+                        <FormLabel className="text-primary dark:text-white/90">
                           Last Name <span className="text-accent">*</span>
                         </FormLabel>
                         <FormControl>
@@ -124,7 +124,7 @@ const Contact = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary">
+                      <FormLabel className="text-primary dark:text-white/90">
                         Email <span className="text-accent">*</span>
                       </FormLabel>
                       <FormControl>
@@ -145,7 +145,7 @@ const Contact = () => {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary">
+                      <FormLabel className="text-primary dark:text-white/90">
                         Phone Number
                       </FormLabel>
                       <FormControl>
@@ -166,7 +166,7 @@ const Contact = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-primary">
+                      <FormLabel className="text-primary dark:text-white/90">
                         Message <span className="text-accent">*</span>
                       </FormLabel>
                       <FormControl>

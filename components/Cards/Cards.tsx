@@ -39,27 +39,24 @@ const journey = [
     institution: "Udemy",
     logoUrl: "/assets/journey/education/udemy.svg",
     qualification: "The Complete JavaScript Course",
-    // duration: "duration",
     description:
-      "This Udemy course covers the essential skills to become a proficient JavaScript developer, teaching both fundamental concepts like variables, functions, and arrays, as well as advanced modern features like ES6, classes, and asynchronous programming.",
+      "This Udemy course covers the essential skills on JavaScript, teaching both fundamental concepts like variables, functions, and arrays, as well as advanced modern features like ES6, classes, and more.",
   },
   {
     type: "education",
     institution: "Udemy",
     logoUrl: "/assets/journey/education/udemy.svg",
     qualification: "MERN From Scratch | eCommerce Platform",
-    // duration: "duration",
     description:
-      "This Udemy course covers building an eCommerce platform with React, Redux, Express, and MongoDB, including authentication, shopping cart with payments, admin management, and product reviews",
+      "This Udemy course covers building an eCommerce platform with React, Redux, Express, and MongoDB, including authentication, shopping cart with payments, admin management, and more.",
   },
   {
     type: "education",
     institution: "Udemy",
     logoUrl: "/assets/journey/education/udemy.svg",
-    qualification: "Node.js, Express, MongoDB The Complete Bootcamp",
-    // duration: "duration",
+    qualification: "Node.js, Express, MongoDB Bootcamp",
     description:
-      "This Udemy course comprehensively covers building a full-stack application with Node.js, Express, MongoDB, and Mongoose, including a feature-rich RESTful API, advanced authentication/security, server-side rendering, and more.",
+      "This Udemy course comprehensively covers building a strong backend with Node.js, Express, MongoDB, and Mongoose, including RESTfulAPI, advanced authentication, server-side, and more.",
   },
 
   // skills
@@ -97,7 +94,7 @@ const Cards = () => {
   return (
     <>
       <Tabs
-        defaultValue="experience"
+        defaultValue="education"
         className="w-full flex flex-col items-center"
       >
         <TabsList className="max-w-max mb-[30px] dark:text-white/80">
