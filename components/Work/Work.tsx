@@ -41,7 +41,7 @@ const data: Project[] = [
     img: "/assets/work/new-portfolio.png",
     title: "My New Portfolio",
     description:
-      "A comprehensive fullstack application for managing user data and analytics.",
+      "My portfolio website crafted with React.js, Next.js, and Tailwind CSS, featuring smooth Framer Motion animations and dark mode support. Clean, modern, and responsive design that delivers an engaging user experience.",
     techStack: [
       { name: "NextJs", logo: "/assets/icons/nextjs.svg" },
       { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
@@ -49,35 +49,20 @@ const data: Project[] = [
       { name: "Framer Motion", logo: "/assets/icons/framer-motion.svg" },
     ],
   },
-  {
-    href: "/",
-    demoUrl: "https://demo-project1.com",
-    githubUrl: "https://github.com/username/project1",
-    category: "Apps",
-    img: "/assets/work/thumb-2.png",
-    title: "Project 2",
-    description:
-      "A mobile app for task management with real-time notifications.",
-    techStack: [
-      { name: "React Native", logo: "/assets/icons/react-native.svg" },
-      { name: "Expo", logo: "/assets/icons/expo.svg" },
-    ],
-  },
-  {
-    href: "/",
-    demoUrl: "https://demo-project1.com",
-    githubUrl: "https://github.com/username/project1",
-    category: "Fullstack",
-    img: "/assets/work/thumb-3.png",
-    title: "Project 3",
-    description:
-      "An e-commerce platform with advanced search and payment integration.",
-    techStack: [
-      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
-      { name: "Express", logo: "/assets/icons/express.svg" },
-      { name: "MongoDB", logo: "/assets/icons/mongodb.svg" },
-    ],
-  },
+  // {
+  //   href: "/",
+  //   demoUrl: "https://demo-project1.com",
+  //   githubUrl: "https://github.com/username/project1",
+  //   category: "Apps",
+  //   img: "/assets/work/thumb-2.png",
+  //   title: "Project 2",
+  //   description:
+  //     "A mobile app for task management with real-time notifications.",
+  //   techStack: [
+  //     { name: "React Native", logo: "/assets/icons/react-native.svg" },
+  //     { name: "Expo", logo: "/assets/icons/expo.svg" },
+  //   ],
+  // },
   {
     href: undefined,
     demoUrl: "https://www.youtube.com/watch?v=qAoGZq1lOSU&ab_channel=FindeRent",
@@ -96,6 +81,22 @@ const data: Project[] = [
       { name: "MongoDB", logo: "/assets/icons/mongodb.svg" },
       { name: "CSS", logo: "/assets/icons/css.svg" },
       { name: "Cloudinary", logo: "/assets/icons/cloudinary.svg" },
+    ],
+  },
+  {
+    href: "/https://maor-saadia-portfolio.vercel.app/",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/MyPortfolio.git",
+    category: "Frontend",
+    img: "/assets/work/old-portfoilo.png",
+    title: "My Old Portfolio",
+    description:
+      "My old portfolio - built with Next.js, featuring dynamic animations using Framer Motion and styled with Tailwind CSS. This responsive site includes a dark theme mode for a beautiful and comfortable browsing experience.",
+    techStack: [
+      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
+      { name: "JavaScript", logo: "/assets/icons/javascript.svg" },
+      { name: "TailwindCss", logo: "/assets/icons/tailwind.svg" },
+      { name: "Framer Motion", logo: "/assets/icons/framer-motion.svg" },
     ],
   },
 ];

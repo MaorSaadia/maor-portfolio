@@ -58,6 +58,38 @@ const journey = [
     description:
       "This Udemy course comprehensively covers building a strong backend with Node.js, Express, MongoDB, and Mongoose, including RESTfulAPI, advanced authentication, server-side, and more.",
   },
+  {
+    type: "education",
+    institution: "Udemy",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "The Ultimate React Course",
+    description:
+      "This Udemy course teaches modern React development from beginner to advanced, covering essential concepts like React Server Components, Next.js, state management with Redux and React Query, custom hooks, tailwindCSS, and more.",
+  },
+  {
+    type: "education",
+    institution: "Udemy",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "React Native - The Practical Guide",
+    description:
+      "This Udemy course teaches how to build native iOS and Android mobile apps using React Native, covering essential mobile features like Google Maps and device camera integration, allowing developers to create cross-platform applications.",
+  },
+  {
+    type: "education",
+    institution: "Udemy",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "The Complete React Native",
+    description:
+      "This Udemy course teaches building native mobile apps with React Native, covering Hooks, Context, Redux, and React Navigation, guiding through creating reusable components and deploying applications to both Apple and Google Play stores.",
+  },
+  {
+    type: "education",
+    institution: "Udemy",
+    logoUrl: "/assets/journey/education/udemy.svg",
+    qualification: "Mastering TypeScript",
+    description:
+      "This Udemy course provides a comprehensive guide to TypeScript, covering its core syntax, advanced features like Interfaces and Generics, and integration with React and Webpack for modern web development.",
+  },
 
   // skills
   {
