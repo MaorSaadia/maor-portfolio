@@ -25,7 +25,6 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
