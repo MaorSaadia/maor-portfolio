@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 
-// First, let's update your CardProps interface
 interface CardProps {
   type?: string;
   logoUrl?: string;
@@ -16,7 +15,6 @@ interface CardProps {
   level?: "Beginner" | "Intermediate" | "Advanced" | string;
 }
 
-// Create a new ProficiencyLevel component
 interface ProficiencyLevelProps {
   level: "Beginner" | "Intermediate" | "Advanced" | string;
 }
@@ -52,7 +50,6 @@ const ProficiencyLevel: React.FC<ProficiencyLevelProps> = ({ level }) => {
   );
 };
 
-// Update your Card component to include the proficiency level
 const Card: React.FC<CardProps> = ({
   type,
   logoUrl = "",
@@ -83,12 +80,12 @@ const Card: React.FC<CardProps> = ({
                   ? position
                   : type === "education"
                   ? qualification
+                  : type === "skill"
+                  ? name
                   : duration}
               </h3>
             </div>
-            <p className="text-base dark:text-white/90">
-              {type !== "experience" && type !== "education" ? null : duration}
-            </p>
+            <p className="text-base dark:text-white/90">{duration}</p>
           </div>
           <div className="flex-1 flex items-center justify-center xl:justify-start md:py-8 md:px-16">
             <div className="flex flex-col xl:flex-row items-center xl:items-start gap-4 text-center xl:text-left xl:gap-10 px-4 xl:px-0">
