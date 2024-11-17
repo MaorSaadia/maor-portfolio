@@ -1,6 +1,31 @@
 "use client";
 
-import { FaCss3Alt, FaHtml5, FaJs, FaReact } from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaCss3Alt,
+  FaGit,
+  FaHtml5,
+  FaJs,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiC,
+  SiCplusplus,
+  SiExpress,
+  SiFramer,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiPostgresql,
+  SiPrisma,
+  SiReact,
+  SiReactquery,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
@@ -70,7 +95,7 @@ const journey = [
     type: "education",
     institution: "Udemy",
     logoUrl: "/assets/journey/education/udemy.svg",
-    qualification: "React Native - The Practical Guide",
+    qualification: "React Native Practical Guide",
     description:
       "This Udemy course teaches how to build native iOS and Android mobile apps using React Native, covering essential mobile features like Google Maps and device camera integration, allowing developers to create cross-platform applications.",
   },
@@ -94,31 +119,192 @@ const journey = [
   // skills
   {
     type: "skill",
+    name: "C",
+    icon: <SiC />,
+    duration: "2020",
+    level: "Beginner",
+    description:
+      "A powerful low-level programming language used for system programming and building efficient applications.",
+  },
+  {
+    type: "skill",
+    name: "C++",
+    icon: <SiCplusplus />,
+    duration: "2020",
+    level: "Beginner",
+    description:
+      "An extension of C that adds object-oriented features, used in game development and high-performance applications.",
+  },
+  {
+    type: "skill",
     name: "HTML",
     icon: <FaHtml5 />,
-    duration: "duration",
-    // description: "description",
+    level: "Advanced",
+    duration: "2021",
+    description:
+      "The standard markup language for creating web pages and structuring web content.",
   },
   {
     type: "skill",
     name: "CSS",
     icon: <FaCss3Alt />,
-    duration: "duration",
-    // description: "description",
+    level: "Intermediate",
+    duration: "2021",
+    description:
+      "A styling language used to design and customize the visual presentation of HTML documents.",
   },
   {
     type: "skill",
     name: "Javascript",
     icon: <FaJs />,
-    duration: "duration",
-    // description: "description",
+    duration: "2021",
+    level: "Advanced",
+    description:
+      "A versatile programming language that enables interactive and dynamic web functionality.",
+  },
+  {
+    type: "skill",
+    name: "Bootstrap",
+    icon: <FaBootstrap />,
+    duration: "2021",
+    level: "Beginner",
+    description:
+      "A popular CSS framework for building responsive and mobile-first websites quickly.",
+  },
+  {
+    type: "skill",
+    name: "Python",
+    icon: <FaPython />,
+    duration: "2021",
+    level: "Beginner",
+    description:
+      "A high-level programming language known for its simplicity and extensive library ecosystem.",
+  },
+  {
+    type: "skill",
+    name: "Git",
+    icon: <FaGit />,
+    duration: "2022",
+    level: "Advanced",
+    description:
+      "A distributed version control system for tracking changes and collaborating on code.",
   },
   {
     type: "skill",
     name: "React",
     icon: <FaReact />,
-    duration: "duration",
-    // description: "description",
+    duration: "2022",
+    level: "Advanced",
+    description:
+      "A JavaScript library for building user interfaces with reusable components and efficient DOM manipulation.",
+  },
+  {
+    type: "skill",
+    name: "NodeJs",
+    icon: <FaNodeJs />,
+    duration: "2022",
+    level: "Advanced",
+    description:
+      "A runtime environment that allows executing JavaScript code outside the browser, primarily for backend development.",
+  },
+  {
+    type: "skill",
+    name: "Express",
+    icon: <SiExpress />,
+    duration: "2022",
+    level: "Advanced",
+    description:
+      "A minimal and flexible Node.js web application framework for building robust APIs and web applications.",
+  },
+  {
+    type: "skill",
+    name: "Mongodb",
+    icon: <SiMongodb />,
+    level: "Intermediate",
+    duration: "2022",
+    description:
+      "A NoSQL database that provides high scalability and flexibility with JSON-like document storage.",
+  },
+  {
+    type: "skill",
+    name: "SQL",
+    icon: <SiMysql />,
+    level: "Beginner",
+    duration: "2023",
+    description:
+      "A standard language for managing and manipulating relational databases.",
+  },
+  {
+    type: "skill",
+    name: "React Native",
+    icon: <SiReact />,
+    duration: "2023",
+    level: "Advanced",
+    description:
+      "A framework for building native mobile applications using React and JavaScript.",
+  },
+  {
+    type: "skill",
+    name: "React Query",
+    icon: <SiReactquery />,
+    duration: "2023",
+    level: "Intermediate",
+    description:
+      "A powerful data-fetching and state management library for React applications.",
+  },
+  {
+    type: "skill",
+    name: "NextJS",
+    icon: <SiNextdotjs />,
+    duration: "2024",
+    level: "Advanced",
+    description:
+      "A React framework that enables server-side rendering and static site generation for optimal performance.",
+  },
+  {
+    type: "skill",
+    name: "Tailwindcss",
+    icon: <SiTailwindcss />,
+    duration: "2024",
+    level: "Intermediate",
+    description:
+      "A utility-first CSS framework that enables rapid UI development through composable classes and modern design principles.",
+  },
+  {
+    type: "skill",
+    name: "Prisma",
+    icon: <SiPrisma />,
+    duration: "2024",
+    level: "Intermediate",
+    description:
+      "A modern database ORM that simplifies database operations with type-safe queries.",
+  },
+  {
+    type: "skill",
+    name: "Postgresql",
+    icon: <SiPostgresql />,
+    duration: "2024",
+    level: "Beginner",
+    description:
+      "A powerful, open-source relational database system with advanced features and reliability.",
+  },
+  {
+    type: "skill",
+    name: "TypeScript",
+    icon: <SiTypescript />,
+    duration: "2024",
+    level: "Intermediate",
+    description:
+      "A typed superset of JavaScript that adds static types for enhanced code quality and developer experience.",
+  },
+  {
+    type: "skill",
+    name: "Framer-Motion",
+    icon: <SiFramer />,
+    duration: "2024",
+    level: "Beginner",
+    description:
+      "A production-ready motion library for React that powers animations and interactive UI elements.",
   },
 ];
 

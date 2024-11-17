@@ -1,5 +1,7 @@
 import Image from "next/image";
+import React from "react";
 
+// First, let's update your CardProps interface
 interface CardProps {
   type?: string;
   logoUrl?: string;
@@ -11,8 +13,46 @@ interface CardProps {
   qualification?: string;
   name?: string;
   icon?: React.ReactNode;
+  level?: "Beginner" | "Intermediate" | "Advanced" | string;
 }
 
+// Create a new ProficiencyLevel component
+interface ProficiencyLevelProps {
+  level: "Beginner" | "Intermediate" | "Advanced" | string;
+}
+
+const ProficiencyLevel: React.FC<ProficiencyLevelProps> = ({ level }) => {
+  const dots = {
+    Beginner: [true, false, false],
+    Intermediate: [true, true, false],
+    Advanced: [true, true, true],
+  }[level] || [false, false, false];
+
+  const colors =
+    {
+      Beginner: "bg-orange-400",
+      Intermediate: "bg-yellow-400",
+      Advanced: "bg-green-400",
+    }[level] || "bg-gray-400";
+
+  return (
+    <div className="flex items-center gap-2">
+      <span className="text-sm font-medium dark:text-white/80">{level}</span>
+      <div className="flex gap-1">
+        {dots.map((isActive, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full ${
+              isActive ? colors : "bg-gray-200 dark:bg-gray-600"
+            } transition-colors`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Update your Card component to include the proficiency level
 const Card: React.FC<CardProps> = ({
   type,
   logoUrl = "",
@@ -24,6 +64,7 @@ const Card: React.FC<CardProps> = ({
   qualification = "",
   name = "",
   icon = null,
+  level,
 }) => {
   return (
     <div className="w-full h-[300px] overflow-hidden flex items-center sticky top-12">
@@ -52,12 +93,11 @@ const Card: React.FC<CardProps> = ({
           <div className="flex-1 flex items-center justify-center xl:justify-start md:py-8 md:px-16">
             <div className="flex flex-col xl:flex-row items-center xl:items-start gap-4 text-center xl:text-left xl:gap-10 px-4 xl:px-0">
               {type === "skill" ? (
-                //render icon for skill
-                <div className="w-max xl:w-[300px] h-full relative flex items-center justify-center">
+                <div className="w-max xl:w-[300px] h-full relative flex flex-col items-center justify-center gap-2">
                   <div className="text-5xl text-primary/90">{icon}</div>
+                  {level && <ProficiencyLevel level={level} />}
                 </div>
               ) : (
-                // render the ogo experiemce & education
                 <div className="relative w-[300px] h-[38px] xl:h-[44px]">
                   <Image src={logoUrl} fill alt="" className="object-contain" />
                 </div>
