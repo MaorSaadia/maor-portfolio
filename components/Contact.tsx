@@ -43,22 +43,37 @@ const Contact = () => {
   });
 
   // Handle form submission
-  const onSubmit = async () => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    // Simulate form submission - replace with your actual submission logic
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/emails/contact-me", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    setIsSubmitting(false);
-    setShowIcon(true);
-    form.reset();
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
 
-    // Hide success icon after 3 seconds
-    const timer = setTimeout(() => {
-      setShowIcon(false);
-    }, 3000);
+      setShowIcon(true);
+      form.reset();
 
-    return () => clearTimeout(timer);
+      // Hide success icon after 3 seconds
+      const timer = setTimeout(() => {
+        setShowIcon(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      // Handle error (you might want to show an error message to the user)
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
