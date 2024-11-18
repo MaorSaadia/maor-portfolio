@@ -2,9 +2,9 @@
 
 import { useContext } from "react";
 import { Moon, Sun } from "lucide-react";
+import Socials from "./Socials";
 import Logo from "./Logo";
 import Nav from "./Nav";
-import Socials from "./Socials";
 
 import { DarkModeContext } from "@/contexts/DarkModeContext";
 
