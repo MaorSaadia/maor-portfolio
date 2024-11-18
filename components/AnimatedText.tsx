@@ -1,4 +1,5 @@
 "use client";
+
 import { motion, Variants } from "framer-motion";
 
 const letterAnimation: Variants = {
