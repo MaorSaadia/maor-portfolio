@@ -56,7 +56,7 @@ const journey = [
     logoUrl: "/assets/journey/education/sce-logo.png",
     qualification: "B.Sc Software Engineering",
     duration: "Sep 2020 - Oct 2024",
-    description: "description",
+    description: "GPA: 84",
   },
   {
     type: "education",

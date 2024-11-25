@@ -34,7 +34,7 @@ interface LinkButtonProps {
 
 const data: Project[] = [
   {
-    href: "https://vercel.com/maorsaadias-projects/maor-saadia-new-portfolio",
+    href: "/",
     demoUrl: undefined,
     githubUrl: "https://github.com/MaorSaadia/maor-portfolio.git",
     category: "Frontend",
@@ -49,20 +49,40 @@ const data: Project[] = [
       { name: "Framer Motion", logo: "/assets/icons/framer-motion.svg" },
     ],
   },
-  // {
-  //   href: "/",
-  //   demoUrl: "https://demo-project1.com",
-  //   githubUrl: "https://github.com/username/project1",
-  //   category: "Apps",
-  //   img: "/assets/work/thumb-2.png",
-  //   title: "Project 2",
-  //   description:
-  //     "A mobile app for task management with real-time notifications.",
-  //   techStack: [
-  //     { name: "React Native", logo: "/assets/icons/react-native.svg" },
-  //     { name: "Expo", logo: "/assets/icons/expo.svg" },
-  //   ],
-  // },
+  {
+    href: "https://ecommerce-admin-nine-zeta.vercel.app/",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/ecommerce-admin.git",
+    category: "FullStack",
+    img: "/assets/work/dashboard-admin.png",
+    title: "Full Stack E-Commerce Admin Dashboard",
+    description:
+      "A comprehensive management platform built with Next.js 14, React, and Tailwind CSS, enabling multi-store administration. Features secure authentication, real-time sales analytics, and centralized control over product categories, sizes, colors, and inventory. Implemented robust PostgreSQL database management using Prisma, with intuitive UI for seamless store configuration, order tracking, and performance monitoring.",
+    techStack: [
+      { name: "NextJs", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "TailwindCss", logo: "/assets/icons/tailwind.svg" },
+      { name: "Prisma", logo: "/assets/icons/prisma.svg" },
+      { name: "PostgreSql", logo: "/assets/icons/postgresql.svg" },
+    ],
+  },
+  {
+    href: "https://luxe-aura.vercel.app/",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/LuxeAura.git",
+    category: "FullStack",
+    img: "/assets/work/luxeAura-store.png",
+    title: "Full Stack E-Commerce luxeAura Store",
+    description:
+      "A sophisticated online shopping experience developed with Next.js 14, featuring dynamic product browsing, interactive cart functionality, and secure Stripe payment integration. Designed with responsive Tailwind CSS, the platform offers product filtering, detailed product pages, and a smooth checkout process, user-friendly interface for customers.",
+    techStack: [
+      { name: "NextJs", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "TailwindCss", logo: "/assets/icons/tailwind.svg" },
+      { name: "Prisma", logo: "/assets/icons/prisma.svg" },
+      { name: "PostgreSql", logo: "/assets/icons/postgresql.svg" },
+    ],
+  },
   {
     href: undefined,
     demoUrl: "https://www.youtube.com/watch?v=qAoGZq1lOSU&ab_channel=FindeRent",
@@ -84,7 +104,7 @@ const data: Project[] = [
     ],
   },
   {
-    href: "/https://maor-saadia-portfolio.vercel.app/",
+    href: "https://maor-saadia-portfolio.vercel.app/",
     demoUrl: undefined,
     githubUrl: "https://github.com/MaorSaadia/MyPortfolio.git",
     category: "Frontend",
@@ -211,7 +231,7 @@ const Work = () => {
                         <LinkButton
                           href={item.demoUrl}
                           icon={FaExternalLinkAlt}
-                          text="Live Demo"
+                          text="Demo"
                           className="bg-accent text-white hover:bg-accent/80"
                         />
                         <LinkButton
