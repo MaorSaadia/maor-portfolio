@@ -74,7 +74,7 @@ const data: Project[] = [
     img: "/assets/work/luxeAura-store.png",
     title: "Full Stack E-Commerce luxeAura Store",
     description:
-      "A sophisticated online shopping experience developed with Next.js 14, featuring dynamic product browsing, interactive cart functionality, and secure Stripe payment integration. Designed with responsive Tailwind CSS, the platform offers product filtering, detailed product pages, and a smooth checkout process, user-friendly interface for customers.",
+      "A simple online shopping experience developed with Next.js 14, featuring dynamic product browsing, interactive cart functionality, and secure Stripe payment integration. Designed with responsive Tailwind CSS, the platform offers product filtering, detailed product pages, and a smooth checkout process, user-friendly interface for customers.",
     techStack: [
       { name: "NextJs", logo: "/assets/icons/nextjs.svg" },
       { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
