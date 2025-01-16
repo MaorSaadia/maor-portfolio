@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { IconType } from "react-icons";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import AnimatedText from "../AnimatedText";
 import WorkItem from "./WorkItem";
