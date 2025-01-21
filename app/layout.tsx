@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 import { DarkModeProvider } from "@/contexts/DarkModeContext";
 import "./globals.css";
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${inter.variable} ${bebasNeue.variable}`}>
+        <Analytics />
         <DarkModeProvider>{children}</DarkModeProvider>
       </body>
     </html>
