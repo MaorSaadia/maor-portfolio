@@ -35,6 +35,41 @@ interface LinkButtonProps {
 
 const data: Project[] = [
   {
+    href: "https://www.ai-resume-craft.com",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/resume-craft",
+    category: "FullStack",
+    img: "/assets/work/airesume-craft.png",
+    title: "AIResumeCraft - SaaS Platform",
+    description:
+      "AIResumeCraft is a SaaS AI-powered resume creation platform. I developed and launched this platform, integrating secure authentication with Clerk to protect user data. The platform also features a tiered subscription model with Lemon Squeezy integration for payment processing. Gemini AI powers the resume creation, offering automated content generation and personalized suggestions to help users create professional resumes quickly.",
+    techStack: [
+      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "Tailwind CSS", logo: "/assets/icons/tailwind.svg" },
+      { name: "Clerk", logo: "/assets/icons/clerk.svg" },
+      { name: "Zustand", logo: "/assets/icons/zustand.svg" },
+      { name: "Lemon Squeezy", logo: "/assets/icons/lemon-squeezy.svg" },
+      { name: "Gemini AI", logo: "/assets/icons/gemini.svg" },
+    ],
+  },
+  {
+    href: "https://www.mishbaby.com",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/MishBabyStore",
+    category: "FullStack",
+    img: "/assets/work/mishbaby.png",
+    title: "Mishbaby - Ecommerce Platform",
+    description:
+      "Mishbaby is a full-featured e-commerce platform developed with Next.js. The website integrates Wix Studio for backend operations, enabling smooth product management and payment processing, including cart and checkout features. I used Tailwind CSS to create a responsive design, ensuring an optimal user experience across devices and enhancing overall user engagement.",
+    techStack: [
+      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "Tailwind CSS", logo: "/assets/icons/tailwind.svg" },
+      { name: "Wix Studio", logo: "/assets/icons/wix.svg" },
+    ],
+  },
+  {
     href: "/",
     demoUrl: undefined,
     githubUrl: "https://github.com/MaorSaadia/maor-portfolio.git",

@@ -3,12 +3,12 @@ import Image from "next/image";
 const services = [
   {
     icon: "/assets/services/icon-1.svg",
-    title: "UI UX Design",
+    title: "Front-end Developer",
     description: "Designing compelling engaging user experiences",
   },
   {
     icon: "/assets/services/icon-2.svg",
-    title: "Web Development",
+    title: "Full-stack Development",
     description: "Developing robust, scalable websites for all devices.",
   },
   {
@@ -18,8 +18,8 @@ const services = [
   },
   {
     icon: "/assets/services/icon-4.svg",
-    title: "Care & Support",
-    description: "Providing updates, security and support for perfomance",
+    title: "SaaS Development",
+    description: "Creating scalable, cloud-based SaaS solutions.",
   },
 ];
 
