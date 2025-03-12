@@ -214,6 +214,24 @@ const Work = () => {
     );
   };
 
+  const ViewCodeButton: React.FC<{ href?: string }> = ({ href }) => {
+    if (!href) return null;
+
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute bottom-6 right-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-gray-800 text-white hover:bg-gray-700 transition-colors duration-300"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <FaGithub size={16} />
+        <span>View Code</span>
+      </motion.a>
+    );
+  };
+
   return (
     <section className="pt-24 min-h-[1000px]" id="work">
       <div className="container mx-auto">
@@ -245,10 +263,10 @@ const Work = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-white dark:bg-[#4b4b4b] rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="bg-white dark:bg-[#4b4b4b] rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative"
                   >
                     <WorkItem {...item} />
-                    <div className="mt-4 space-y-4">
+                    <div className="mt-4 space-y-4 pb-14">
                       <TruncatedDescription text={item.description} />
 
                       <div className="flex flex-wrap gap-3">
@@ -278,22 +296,20 @@ const Work = () => {
                           </motion.div>
                         ))}
                       </div>
-                      {/* Project Links Section */}
+
+                      {/* Demo button only */}
                       <div className="flex flex-wrap gap-4 mt-6">
                         <LinkButton
                           href={item.demoUrl}
                           icon={FaExternalLinkAlt}
                           text="Demo"
-                          className="bg-accent text-white hover:bg-accent/80"
-                        />
-                        <LinkButton
-                          href={item.githubUrl}
-                          icon={FaGithub}
-                          text="View Code"
-                          className="bg-gray-800 text-white hover:bg-gray-700"
+                          className="absolute bottom-6 left-6 inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-accent text-white hover:bg-accent/80 duration-300"
                         />
                       </div>
                     </div>
+
+                    {/* View Code button positioned absolutely */}
+                    <ViewCodeButton href={item.githubUrl} />
                   </motion.div>
                 ))}
               </AnimatePresence>
