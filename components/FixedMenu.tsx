@@ -149,9 +149,9 @@ const FixedMenu = () => {
                               Location
                             </p>
                             <p
-                              className={
+                              className={`dark:text-gray-300 ${
                                 isShortScreen ? "text-sm" : "text-base"
-                              }
+                              } `}
                             >
                               Beer Sheva, Israel
                             </p>
@@ -195,9 +195,9 @@ const FixedMenu = () => {
                               Email
                             </p>
                             <p
-                              className={
+                              className={`dark:text-gray-300 ${
                                 isShortScreen ? "text-sm" : "text-base"
-                              }
+                              } `}
                             >
                               maorsa9@gmail.com
                             </p>
