@@ -22,7 +22,16 @@ const Hero = () => {
             <span className="text-accent">I Build And</span> Design Powerful
             <TypeAnimation
               preRenderFirstString={true}
-              sequence={["Webistes", 2000, "Apps", 2000, "ECommerce", 2000]}
+              sequence={[
+                "Webistes",
+                2000,
+                "Apps",
+                2000,
+                "ECommerce",
+                2000,
+                "SaaS",
+                2000,
+              ]}
               speed={50}
               repeat={Infinity}
               wrapper="span"
@@ -32,9 +41,12 @@ const Hero = () => {
           </h1>
 
           <p className="lead max-w-[476px] mb-7 dark:text-white/90">
-            Delivering powerful, custom websites that blend aesthetics with
-            responsive and intuitive user interfaces, creating seamless user
-            experiences across platforms with meticulous attention to detail.
+            Highly motivated and results-oriented Full Stack Developer with a
+            B.Sc. in Software Engineering and a proven track record of building
+            and launching successful web applications. Expertise in Next.js,
+            TypeScript, MERN Stack and related technologies, demonstrated
+            through the development of an e-commerce and a SaaS creation
+            platform.
           </p>
           <ScrollLink to="contact" smooth>
             <button className="btn btn-accent mb-8">Contact me</button>

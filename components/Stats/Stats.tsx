@@ -18,7 +18,7 @@ const statsData = [
     text: "Yrs. of Experience",
   },
   {
-    endCountNum: 4,
+    endCountNum: 5,
     endCountText: "+",
     text: "Website Built",
   },

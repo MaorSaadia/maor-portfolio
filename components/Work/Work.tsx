@@ -70,6 +70,22 @@ const data: Project[] = [
     ],
   },
   {
+    href: "https://www.alitrendsfinds.com",
+    demoUrl: undefined,
+    githubUrl: "https://github.com/MaorSaadia/AliTrendsFinds",
+    category: "E-commerce",
+    img: "/assets/work/alitrendsfinds.png",
+    title: "AliTrendsFinds - Affiliate E-commerce Platform",
+    description:
+      "AliTrendsFinds is a responsive affiliate e-commerce platform that features categorized product listings sourced from AliExpress. The platform includes a dynamic search functionality for efficient product discovery and an improved user experience. It integrates Sanity CMS for streamlined content management, allowing real-time updates and enhanced control over product presentation and website content. Built with modern web development practices, it is optimized for both desktop and mobile devices.",
+    techStack: [
+      { name: "Next.js", logo: "/assets/icons/nextjs.svg" },
+      { name: "TypeScript", logo: "/assets/icons/typescript.svg" },
+      { name: "Tailwind CSS", logo: "/assets/icons/tailwind.svg" },
+      { name: "Sanity CMS", logo: "/assets/icons/sanity.svg" },
+    ],
+  },
+  {
     href: "/",
     demoUrl: undefined,
     githubUrl: "https://github.com/MaorSaadia/maor-portfolio.git",
