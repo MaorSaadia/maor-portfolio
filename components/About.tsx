@@ -4,27 +4,118 @@ import { motion } from "framer-motion";
 import AnimatedText from "./AnimatedText";
 
 const About = () => {
+  // Animation variants for text elements
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  // Animation for the arrow
+  const arrowLineVariants = {
+    hidden: { width: 0 },
+    visible: {
+      width: "100%",
+      transition: {
+        duration: 1.2,
+        ease: "easeInOut",
+        delay: 0.5,
+      },
+    },
+  };
+
+  // Animation for the arrow head
+  const arrowHeadVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        delay: 1.7,
+      },
+    },
+  };
+
   return (
     <section className="relative pt-12 pb-24" id="about">
       <div className="container mx-auto h-full">
         <div className="h-full flex items-center justify-center">
-          {/* image + shapes */}
+          {/* decorative element replacing the image */}
           <div className="hidden xl:flex flex-1 pl-8">
             <div className="relative w-full max-w-[380px]">
               {/* shape */}
-              <div className="w-[160px] h-[160px] bg-rose-800 dark:bg-rose-400 absolute -left-5 -top-5 -z-10"></div>
-              {/* image */}
-              <div className="rounded-tl-[8px] rounded-tr-[120px] w-full bg-[#e5f8f6] min-h-[480px] flex items-end justify-center">
-                <Image
-                  src="/assets/about/profile-img.png"
-                  width={1365}
-                  height={2048}
-                  quality={100}
-                  priority
-                  alt=""
-                />
+              <div className="w-[160px] h-[160px] bg-accent absolute -left-5 -top-5 -z-10"></div>
+              {/* decorative element instead of image */}
+              <div className="rounded-tl-[8px] rounded-tr-[120px] w-full bg-[#e5f8f6] min-h-[480px] flex flex-col items-center justify-center relative">
+                <motion.div
+                  className="text-4xl font-bold text-primary/70 dark:text-white/70 text-center"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: {
+                        staggerChildren: 0.3,
+                      },
+                    },
+                  }}
+                >
+                  <motion.span
+                    className="block animate-pulse dark:text-black/60"
+                    variants={textVariants}
+                  >
+                    Software
+                  </motion.span>
+                  <motion.span
+                    className="block animate-[pulse_2s_ease-in-out_0.8s_infinite] dark:text-black/60"
+                    variants={textVariants}
+                  >
+                    Engineer
+                  </motion.span>
+
+                  {/* Connecting word "with" that appears after animation */}
+                  <motion.span
+                    className="block mt-6 text-2xl text-primary/60 dark:text-black/60 animate-pulse"
+                    variants={textVariants}
+                    transition={{ delay: 0.6 }}
+                  >
+                    with
+                  </motion.span>
+
+                  {/* Animated arrow container */}
+                  <div className="relative h-8 mt-2 w-full px-8">
+                    {/* Animated arrow line */}
+                    <motion.div
+                      className="h-[2px] bg-primary/40 dark:bg-black/40 mx-auto"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={arrowLineVariants}
+                    />
+
+                    {/* Animated arrow head */}
+                    <motion.div
+                      className="absolute right-5 -mt-[7px]"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={arrowHeadVariants}
+                    >
+                      <div
+                        className="w-0 h-0 
+                        border-t-[6px] border-t-transparent 
+                        border-l-[12px] border-l-primary/40 dark:border-l-black/40
+                        border-b-[6px] border-b-transparent"
+                      />
+                    </motion.div>
+                  </div>
+                </motion.div>
               </div>
-              {/* rotating shape */}
+              {/* rotating shape - kept for visual interest */}
               <div className="absolute top-2/4 -right-[65px] flex items-center justify-center">
                 <motion.div
                   animate={{
@@ -43,12 +134,24 @@ const About = () => {
                     alt=""
                   />
                 </motion.div>
-                <div className="absolute text-center text-white">
+                <motion.div
+                  className="absolute text-center text-white"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      delay: 1.2,
+                    },
+                  }}
+                  viewport={{ once: true }}
+                >
                   <div className="text-5xl font-bold leading-none">3+</div>
                   <div className="leading-none text-center">
                     Years of <br /> Experience
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -116,14 +219,3 @@ const About = () => {
 };
 
 export default About;
-
-{
-  /* text */
-}
-<div className="text-center xl:text-left w-full xl:w-[50%] mx-auto xl:mx-0 flex flex-col gap-6">
-  <div>
-    <AnimatedText text="My Name is Maor" textStyles="h2 mb-2" />
-    <p className="text-lg">FullStack & App Developer</p>
-  </div>
-</div>;
-<p className="max-w-[680px] mx-auto xl:mx-0 mb-2">I create ...</p>;
