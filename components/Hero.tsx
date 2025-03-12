@@ -44,9 +44,7 @@ const Hero = () => {
             Highly motivated and results-oriented Full Stack Developer with a
             B.Sc. in Software Engineering and a proven track record of building
             and launching successful web applications. Expertise in Next.js,
-            TypeScript, MERN Stack and related technologies, demonstrated
-            through the development of an e-commerce and a SaaS creation
-            platform.
+            TypeScript, MERN Stack and related technologies.
           </p>
           <ScrollLink to="contact" smooth>
             <button className="btn btn-accent mb-8">Contact me</button>
