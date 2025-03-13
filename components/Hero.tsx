@@ -46,9 +46,27 @@ const Hero = () => {
             and launching successful web applications. Expertise in Next.js,
             TypeScript, MERN Stack and related technologies.
           </p>
-          <ScrollLink to="contact" smooth>
-            <button className="btn btn-accent mb-8">Contact me</button>
-          </ScrollLink>
+
+          {/* Buttons row */}
+          <div className="flex flex-row items-center gap-4 mb-8">
+            <ScrollLink to="contact" smooth>
+              <button className="btn btn-accent w-full sm:w-auto hover:bg-accent/90">
+                Contact me
+              </button>
+            </ScrollLink>
+
+            {/* Resume button */}
+            <a
+              href="/assets/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="btn outline outline-2 outline-accent hover:bg-cyan-50 dark:text-white dark:hover:bg-stone-900 w-full sm:w-auto">
+                View Resume
+              </button>
+            </a>
+          </div>
+
           {/* stats */}
           <Stats />
           {/* image */}

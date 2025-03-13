@@ -85,12 +85,12 @@ const Work = () => {
               text="My Latest Work"
               textStyles="h2 mb-[30px] xl:mb-0"
             />
-            <TabsList className="max-w-max h-full mb-[30px] flex flex-col md:flex-row gap-4 md:gap-0">
+            <TabsList className="max-w-full md:max-w-max h-full mb-[30px]">
               {tabData.map((item, index) => (
                 <TabsTrigger
                   value={item.category}
                   key={index}
-                  className="capitalize w-[120px] flex items-center justify-center dark:text-white/80"
+                  className="capitalize flex items-center justify-center dark:text-white/80"
                   onClick={() => setTabValue(item.category)}
                 >
                   {item.category}
